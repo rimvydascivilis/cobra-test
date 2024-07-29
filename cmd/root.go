@@ -32,6 +32,7 @@ func init() {
 
 	availableSubcommands = []*cobra.Command{
 		helloCmd,
+		countCmd,
 	}
 
 	rootCmd.AddCommand(availableSubcommands...)
