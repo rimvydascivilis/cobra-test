@@ -8,6 +8,7 @@ import (
 )
 
 var verbose bool
+var availableSubcommands []*cobra.Command
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
@@ -29,6 +30,11 @@ func init() {
 
 	rootCmd.PersistentFlags().BoolVarP(&verbose, "verbose", "v", false, "verbose output")
 
+	availableSubcommands = []*cobra.Command{
+		helloCmd,
+	}
+
+	rootCmd.AddCommand(availableSubcommands...)
 }
 
 func setVerbose() {
